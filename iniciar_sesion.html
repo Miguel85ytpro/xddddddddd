@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4 card-eco p-4">
+        <h4 class="text-center mb-4">INGRESAR AL SISTEMA</h4>
+        {% if error %}<div class="alert alert-danger small">{{ error }}</div>{% endif %}
+        <form method="POST">
+            <label class="small fw-bold">USUARIO TRABAJADOR</label>
+            <input type="text" name="usuario" class="form-control mb-3" required>
+            <label class="small fw-bold">CONTRASEÑA</label>
+            <input type="password" name="password" class="form-control mb-4" required>
+            <button type="submit" class="btn btn-verde w-100">ENTRAR</button>
+            <div class="text-center mt-3">
+                <a href="/registro" class="text-success small">Registrar nuevo trabajador</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

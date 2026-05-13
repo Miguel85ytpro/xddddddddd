@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-almacen">
+    <h3 class="text-eco text-uppercase mb-4">Control de Existencias en Tiempo Real</h3>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio (KG)</th>
+                    <th>Existencia</th>
+                    <th>Unidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in productos %}
+                <tr>
+                    <td class="fw-bold">{{ p.nombre }} [cite: 12]</td>
+                    <td>${{ p.precio_kg }}</td>
+                    <td>
+                        <span class="badge {% if p.stock < 50 %}bg-danger{% else %}bg-success{% endif %}">
+                            {{ p.stock }} [cite: 32]
+                        </span>
+                    </td>
+                    <td>{{ p.unidad }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

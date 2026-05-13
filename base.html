@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f1f8e9; color: #2e7d32; min-height: 100vh; }
+        .navbar { background-color: #388e3c !important; }
+        .card-eco { background: white; border-radius: 15px; border: 1px solid #c8e6c9; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-verde { background-color: #4caf50; color: white; border: none; }
+        .btn-verde:hover { background-color: #2e7d32; color: white; }
+        input { border: 1px solid #a5d6a7 !important; }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">🌿 ALMACÉN LOS PAPUS</a>
+        {% if session.user %}
+            <span class="navbar-text text-white">Sesión: {{ session.user }} | <a href="/logout" class="text-warning">Salir</a></span>
+        {% endif %}
+    </div>
+</nav>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
